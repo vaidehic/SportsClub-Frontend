@@ -3,7 +3,7 @@ agent any
 stages {
   stage("Build Project")
   {
-    step{
+    steps{
       script {
               bat "npm install"
               bat "npm run build"
