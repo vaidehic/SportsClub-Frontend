@@ -5,8 +5,8 @@ stages {
   {
     steps{
       script {
-              bat "npm install"
-              bat "npm run build"
+              sh "npm install"
+              sh "npm run build"
             }
    }
 
