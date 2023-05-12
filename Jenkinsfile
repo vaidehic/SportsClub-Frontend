@@ -6,8 +6,8 @@ stages {
   {
     steps{
       script {
-              sh "npm install"
-              sh "npm run build"
+              sh 'npm install'
+              sh 'npm run build'
             }
    }
 
