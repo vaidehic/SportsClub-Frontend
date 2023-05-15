@@ -60,7 +60,7 @@ stages {
 //             steps {
 //                 sh "docker stop sportsclub-final | true"
 //                 sh "docker rm sportsclub-final | true"
-//                 sh "docker run --network vaidehi-sports-network --name sportsclub-final -p 8087:8080 -d docker-vaidehi/sportsclub-angular-image:${TAG}"
+//                 sh "docker run --network vaidehi-sports-network --name sportsclub-final -p 8087:80 -d docker-vaidehi/sportsclub-angular-image:${TAG}"
 //             }
 //         }	    
   
