@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
   providedIn: "root",
 })
 export class SharedService {
-  baseUrl = "http://172.27.59.174:8092";
+  baseUrl = "http://172.27.59.174:8082";
   constructor(private http: HttpClient) {}
   registerForm(registerform) {
     console.log(registerform);

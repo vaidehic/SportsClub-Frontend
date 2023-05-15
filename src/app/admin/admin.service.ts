@@ -7,8 +7,8 @@ import { Observable } from "rxjs/internal/Observable";
 })
 export class AdminService {
   data: any;
-  url = "http://172.27.59.174:8092/admin/";
-  baseUrl = "http://172.27.59.174:8092/";
+  url = "http://172.27.59.174:8082/admin/";
+  baseUrl = "http://172.27.59.174:8082/";
   token = sessionStorage.getItem("token");
   headers_object = new HttpHeaders().set(
     "Authorization",
@@ -28,7 +28,7 @@ export class AdminService {
     const newform = new FormData();
     newform.append("file", image);
     newform.append("sportName", value.sportName);
-    return this.http.post("http://172.27.59.174:8092/admin/image", newform);
+    return this.http.post("http://172.27.59.174:8082/admin/image", newform);
   }
 
   //delete sport by id
