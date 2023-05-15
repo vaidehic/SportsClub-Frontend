@@ -6,7 +6,7 @@ import { Observable } from "rxjs/internal/Observable";
   providedIn: "root",
 })
 export class ManagerService {
-  private baseURL = "http://172.27.59.174:8082/";
+  private baseURL = "http://172.27.59.174:8083/";
   constructor(private http: HttpClient) {}
 
   //to get all batches by managerId

@@ -36,7 +36,7 @@ stages {
 	stage('Pushing Docker Image to Jfrog Artifactory') {
             steps {
                 script {
-                    docker.withRegistry('http://172.27.59.80:8082/', 'artifactory-docker') {
+                    docker.withRegistry('http://172.27.59.80:8083/', 'artifactory-docker') {
                         docker.image("docker-vaidehi/sportsclub-angular-image:${TAG}").push()
                         docker.image("docker-vaidehi/sportsclub-angular-image:${TAG}").push("latest")
                     }
@@ -54,7 +54,7 @@ stages {
                 sh "docker stop sportsclub-angular-image | true"
                 sh "docker rm sportsclub-angular-image | true"
 <<<<<<< HEAD
-                sh "docker run --network vaidehi-sports-network --name sportsclub-angular-image -p 8082:80 -d docker-vaidehi/sportsclub-angular-image:${TAG}"
+                sh "docker run --network vaidehi-sports-network --name sportsclub-angular-image -p 8083:80 -d docker-vaidehi/sportsclub-angular-image:${TAG}"
 =======
                 sh "docker run --network vaidehi-sports-network --name sportsclub-angular-image -p 8092:8080 -d docker-vaidehi/sportsclub-angular-image:${TAG}"
 >>>>>>> 180a5cc411c6ff360611a11c8bed824b83e9d10e
