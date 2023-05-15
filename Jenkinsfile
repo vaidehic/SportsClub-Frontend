@@ -33,28 +33,35 @@ stages {
             }
         }
  
-	stage('Pushing Docker Image to Jfrog Artifactory') {
-            steps {
-                script {
-                    docker.withRegistry('http://172.27.59.80:8082/', 'artifactory-docker') {
-                        docker.image("docker-vaidehi/sportsclub-angular-image:${TAG}").push()
-                        docker.image("docker-vaidehi/sportsclub-angular-image:${TAG}").push("latest")
-                    }
-                }
-            }
-        }
+// 	stage('Pushing Docker Image to Jfrog Artifactory') {
+//             steps {
+//                 script {
+//                     docker.withRegistry('http://172.27.59.80:8082/', 'artifactory-docker') {
+//                         docker.image("docker-vaidehi/sportsclub-angular-image:${TAG}").push()
+//                         docker.image("docker-vaidehi/sportsclub-angular-image:${TAG}").push("latest")
+//                     }
+//                 }
+//             }
+//         }
    stage('Docker Run') {
     steps{
-      sh "docker run -d -p 8087:80 docker-vaidehi/sportsclub-angular-image:${TAG}"
+      sh "docker run -d -p 8087:8080 docker-vaidehi/sportsclub-angular-image:${TAG}"
     }
   }
-        stage('Deploy'){
-            steps {
-                sh "docker stop sportsclub-final | true"
-                sh "docker rm sportsclub-final | true"
-                sh "docker run --network vaidehi-sports-network --name sportsclub-final -p 8087:8080 -d docker-vaidehi/sportsclub-angular-image:${TAG}"
-            }
-        }	    
+//     stage('Deploy'){
+// //             steps {
+// //                 sh "docker stop sportsclub | true"
+// //                 sh "docker rm sportsclub | true"
+// //                 sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
+// //             }
+// //         }
+//         stage('Deploy'){
+//             steps {
+//                 sh "docker stop sportsclub-final | true"
+//                 sh "docker rm sportsclub-final | true"
+//                 sh "docker run --network vaidehi-sports-network --name sportsclub-final -p 8087:8080 -d docker-vaidehi/sportsclub-angular-image:${TAG}"
+//             }
+//         }	    
   
   
 }
