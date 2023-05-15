@@ -53,18 +53,11 @@ stages {
             steps {
                 sh "docker stop sportsclub-angular-image | true"
                 sh "docker rm sportsclub-angular-image | true"
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 sh "docker run --network vaidehi-sports-network --name sportsclub-angular-image -p 8083:80 -d docker-vaidehi/sportsclub-angular-image:${TAG}"
-=======
-                sh "docker run --network vaidehi-sports-network --name sportsclub-angular-image -p 8092:8080 -d docker-vaidehi/sportsclub-angular-image:${TAG}"
->>>>>>> 180a5cc411c6ff360611a11c8bed824b83e9d10e
-=======
 
-                sh "docker run --network vaidehi-sports-network --name sportsclub-angular-image -p 8082:80 -d docker-vaidehi/sportsclub-angular-image:${TAG}"
 
-            
->>>>>>> 28ccb31ed87302108961003f602a1cfa9547c6f2
+
             }
         }
 //         stage('Deploy'){
