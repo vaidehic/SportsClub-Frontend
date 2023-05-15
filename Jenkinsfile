@@ -32,6 +32,7 @@ stages {
                 }
             }
         }
+ 
 	stage('Pushing Docker Image to Jfrog Artifactory') {
             steps {
                 script {
@@ -42,6 +43,11 @@ stages {
                 }
             }
         }
+   stage('Docker Run') {
+    steps{
+      sh "docker run -d 8090:80 docker-vaidehi/sportsclub-angular-image"
+    }
+  }
         stage('Deploy'){
             steps {
                 sh "docker stop sportsclub-final | true"
