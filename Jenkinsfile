@@ -45,7 +45,7 @@ stages {
 //         }
    stage('Docker Run') {
     steps{
-      sh "docker run -d -p 8087:8080 docker-vaidehi/sportsclub-angular-image:${TAG}"
+      sh "docker run -d -p 8090:8080 docker-vaidehi/sportsclub-angular-image:${TAG}"
     }
   }
 //     stage('Deploy'){
