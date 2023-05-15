@@ -36,7 +36,7 @@ stages {
 	stage('Pushing Docker Image to Jfrog Artifactory') {
             steps {
                 script {
-                    docker.withRegistry('http://172.27.59.80:8082/', 'artifactory-docker') {
+                    docker.withRegistry('http://172.27.59.80:802/', 'artifactory-docker') {
                         docker.image("docker-vaidehi/sportsclub-angular-image:${TAG}").push()
                         docker.image("docker-vaidehi/sportsclub-angular-image:${TAG}").push("latest")
                     }
