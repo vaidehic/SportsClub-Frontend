@@ -7,11 +7,6 @@ pipeline {
     }
 	
    agent 
-  {
-	node{
-		label 'linux-slave'
-	}
-	}
 
 stages {
   stage("Build Project")
